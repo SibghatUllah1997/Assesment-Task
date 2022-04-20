@@ -39,7 +39,7 @@ let uri_Data = await axios.get(meta_Data.uri);
   console.log("description:",uri_Data.data.description);
 
   // seller_fee_basis_points
-   console.log("royalty:",uri_Data.data.seller_fee_basis_points);
+   console.log("seller_fee_basis_points:",uri_Data.data.seller_fee_basis_points);
 
   // image in metadata uri
   console.log("image:",uri_Data.data.image);
