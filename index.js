@@ -22,8 +22,8 @@ const {
     data: { data: meta_Data }
   } = Metadata.from(new Account(NFT_Token_Address, mintAccInfo));
 
-  //Printing out the MetaData of the token address
-  console.log("metadata:",meta_Data);
+  // //Printing out the MetaData of the token address
+  // console.log("metadata:",meta_Data);
   
 
   //Fetching the data of the URI we obtained from the metadata
