@@ -12,13 +12,13 @@ const NFT_Token_Address = "EPr4X3pqEMT7Eeu8YH9bt7uTD2PQ96rDP6NGU5PVoXaD";
 
 const get_NFT_Meta_Data = async () => {
   //here we are storing the program derived address of the token into a variable named metaData
-  const PDA_metaData = await Metadata.getPDA(NFT_Token_Address);
+const PDA_metaData = await Metadata.getPDA(NFT_Token_Address);
   
   //getting the account info by the program dervied address, We are getting the following information 
   //e.g. Account  Public key, rentEpoch, Lamports, etc 
-  const mintAccInfo = await connection.getAccountInfo(PDA_metaData);
+const mintAccInfo = await connection.getAccountInfo(PDA_metaData);
 
-  const {
+const {
     data: { data: meta_Data }
   } = Metadata.from(new Account(NFT_Token_Address, mintAccInfo));
 
@@ -27,18 +27,18 @@ const get_NFT_Meta_Data = async () => {
   
 
   //Fetching the data of the URI we obtained from the metadata
-  let uri_Data = await axios.get(meta_Data.uri);
+let uri_Data = await axios.get(meta_Data.uri);
 
   //Printing the data of the URI 
   console.log("metadata uri:",uri_Data.data);
 
-// token name
+  // token name
   console.log("name:",meta_Data.name);
 
-// image in metadata uri description
+  // image in metadata uri description
   console.log("description:",uri_Data.data.description);
 
-// seller_fee_basis_points
+  // seller_fee_basis_points
    console.log("royalty:",uri_Data.data.seller_fee_basis_points);
 
   // image in metadata uri
